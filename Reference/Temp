@@ -1,1 +1,12 @@
+[Unit]
+Description=GPIO ACT LED mimic service
+After=multi-user.target
 
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/gpio_act_led.py
+Restart=on-failure
+User=pi
+Group=pi
+
+[Install]
+WantedBy=multi-user.target
