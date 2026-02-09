@@ -16,6 +16,12 @@ Start-Service ssh-agent
 # Add your key
 ssh-add ~\.ssh\id_ed25519
 ```
+Command breakdown:
+- `Get-Service ssh-agent` - Finds the SSH agent service
+- `|` - Pipes (sends) that service to the next command
+- `Set-Service -StartupType Automatic` - Changes its startup configuration to Automatic
+
+You only need to run this once, and the setting persists across reboots.
 ### 3. Copy your public key
 ```
 bash
@@ -45,3 +51,4 @@ bash
 git remote set-url origin git@github.com:username/repository.git
 ```
 That's it! You're now set up to use SSH with GitHub on Windows 11.
+
