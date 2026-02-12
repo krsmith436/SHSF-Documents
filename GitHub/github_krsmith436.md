@@ -1,6 +1,6 @@
 # GitHub For krsmith436
 
-==Never use "sudo" for git commands.==
+<mark>Never use "sudo" for git commands.</mark>
 
 ### DAILY COMMANDS
 - git pull: Grab the latest changes from GitHub to your Pi.
@@ -157,3 +157,4 @@ Type `yes` and hit **Enter**. All is well if you see:
 ``` Bash
 git remote set-url origin git@github.com:krsmith436/your-repo-name.git 
 ```
+
