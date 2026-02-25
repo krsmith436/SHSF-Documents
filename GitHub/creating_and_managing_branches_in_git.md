@@ -1,8 +1,4 @@
 # Copilot Chat Conversation Export: Creating and managing branches in Git
-
-**User:** @krsmith436
-**Thread URL:** https://github.com/copilot/c/04ab9090-4fac-4039-b83b-a100d884559b
-
 ## @krsmith436
 
 Explain how to create and manage branches in Git. Include commands like `git branch`, `git checkout`, `git merge`, and `git rebase`. Provide examples for each command.
