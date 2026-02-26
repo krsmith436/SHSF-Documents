@@ -1,11 +1,6 @@
 # Copilot Chat Conversation Export: Creating a branch on GitHub for Raspberry
 
-**User:** @krsmith436
-**Thread URL:** https://github.com/copilot/c/78574f83-14d7-4267-aecf-1c30f6675c2a
-
-## @krsmith436
-
-how to create branch on github and get it on a raspberry pi zero 2 w
+How to create branch on github and get it on a raspberry pi zero 2 w
 
 ## Copilot
 
