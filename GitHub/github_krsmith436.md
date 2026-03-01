@@ -16,7 +16,7 @@ Before you touch the Pi, GitHub needs to know where the code is going.
 3. Important: Do not check "Initialize this repository with a README, .gitignore, or license." Leave it completely empty.
 4. Click Create repository.
 5. On your empty GitHub repository page, make sure the SSH button is selected (not HTTPS). The URL should look like `git@github.com:krsmith436/repo-name.git`.
-6. Create a file named ".gitignore" in your project's root directory.
+6. Go to your pi and create a file named ".gitignore" in your project's root directory.
 ``` Bash
 nano .gitignore 
 ```
@@ -48,7 +48,7 @@ build/
 # Any other files/folders 
 ```
 
-8. Go to your pi and enter these commands:
+8. Enter these commands:
 ``` Bash
 cd ~/your-project-folder
 git init                        # This creates a hidden ".git" folder that starts tracking your changes.
@@ -157,4 +157,5 @@ Type `yes` and hit **Enter**. All is well if you see:
 ``` Bash
 git remote set-url origin git@github.com:krsmith436/your-repo-name.git 
 ```
+
 
