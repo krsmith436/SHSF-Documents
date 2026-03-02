@@ -68,9 +68,14 @@ sudo chown -R $USER:$USER .     # Don't forget '.' at the end
 
 ### REMOVE LOCAL REPOSITORY
 This removes only the `.git` folder, leaving your source code intact but removing all git history and repository metadata.
+>On macOS/Linux:
 ``` Bash
 cd ~/your-project-folder
 rm -rf .git
+```
+>On Windows (PowerShell):
+```PowerShell
+Remove-Item -Recurse -Force C:\path\to\repository
 ```
 Remove-rf flag (`-r` = recursive, `-f` = force) deletes the directory and all its contents, including the `.git` folder.
 
@@ -165,6 +170,7 @@ Type `yes` and hit **Enter**. All is well if you see:
 ``` Bash
 git remote set-url origin git@github.com:krsmith436/your-repo-name.git 
 ```
+
 
 
 
