@@ -1,6 +1,6 @@
 # Windows 11 pc Access github.com Using SSH
 ### 1. Generate an SSH key
-Open PowerShell or Command Prompt and run:
+Right-click on PowerShell or Command Prompt and select **Run as Administrator**:
 ```powershell
 ssh-keygen -t ed25519 -C "krsmith436@att.net"
 ```
@@ -46,3 +46,4 @@ For existing repos using HTTPS, switch to SSH:
 git remote set-url origin git@github.com:username/repository.git
 ```
 That's it! You're now set up to use SSH with GitHub on Windows 11.
+
