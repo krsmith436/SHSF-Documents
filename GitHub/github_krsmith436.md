@@ -66,6 +66,14 @@ b) change ownership of all files to USER.
 sudo chown -R $USER:$USER .     # Don't forget '.' at the end 
 ```
 
+### REMOVE LOCAL REPOSITORY
+This removes only the `.git` folder, leaving your source code intact but removing all git history and repository metadata.
+``` Bash
+cd ~/your-project-folder
+rm -rf .git
+```
+Remove-rf flag (`-r` = recursive, `-f` = force) deletes the directory and all its contents, including the `.git` folder.
+
 ### CREATE AND SWITCH TO A NEW BRANCH
 1. Instead of working on main, create a "feature" branch. Let’s call it ble-fix.
 ``` Bash
@@ -157,5 +165,6 @@ Type `yes` and hit **Enter**. All is well if you see:
 ``` Bash
 git remote set-url origin git@github.com:krsmith436/your-repo-name.git 
 ```
+
 
 
