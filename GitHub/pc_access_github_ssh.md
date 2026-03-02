@@ -22,7 +22,7 @@ Command breakdown:
 You only need to run this once, and the setting persists across reboots.
 ### 3. Copy your public key
 ```powershell
-Get-Content ~\.ssh\id_ed25519.pub | Set-Clipboard
+Get-Content $HOME\.ssh\id_ed25519.pub | Set-Clipboard
 ```
 Copy the entire output (starts with `ssh-ed25519`).
 ### 4. Add the key to GitHub
@@ -46,4 +46,5 @@ For existing repos using HTTPS, switch to SSH:
 git remote set-url origin git@github.com:username/repository.git
 ```
 That's it! You're now set up to use SSH with GitHub on Windows 11.
+
 
