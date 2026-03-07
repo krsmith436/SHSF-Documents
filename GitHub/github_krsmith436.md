@@ -128,14 +128,14 @@ git branch -m old-branch-name new-branch-name
 ---
 
 ## <mark>WORKFLOW: CREATE BRANCH ON GITHUB AND GET IT TO PI</mark>
-#### Part 1: Create a Branch on GitHub
+**Part 1: Create a Branch on GitHub**
 1. Go to your repository on github.com
 2. Click the branch dropdown (currently showing your default branch, usually "main")
 3. Type a new branch name
 4. Click "Create branch: [name]"
 
-#### Part 2: Get the Branch on Your Raspberry Pi
-1. **Clone the repository (if you haven't already):**
+**Part 2: Get the Branch on Your Raspberry Pi**
+1. Clone the repository (if you haven't already):
    ```bash
    # SSH (requires SSH key setup)
    git clone git@github.com:username/repo-name.git
@@ -144,22 +144,22 @@ git branch -m old-branch-name new-branch-name
    git clone https://github.com/username/repo-name.git
    ```
 
-2. **Navigate to the repository:**
+2. Navigate to the repository:
    ```bash
    cd repo-name
    ```
 
-3. **Fetch all branches from GitHub:**
+3. Fetch all branches from GitHub:
    ```bash
    git fetch origin
    ```
 
-4. **Check out your new branch:**
+4. Check out your new branch:
    ```bash
    git checkout my-new-branch
    ```
 
-5. **Verify you're on the correct branch:**
+5. Verify you're on the correct branch:
    ```bash
    git branch
    # Should show:
@@ -175,8 +175,7 @@ git checkout -b ble-fix
 - The `-b` flag tells Git to **create** the branch.
 - `checkout` tells Git to **switch** your workspace to that branch.
 
-2. Make Your Changes<br>
-Now, modify your Python scripts.
+2. Make Your Changes.
 ``` Bash
 # After editing your files...
 git add .
@@ -279,6 +278,7 @@ Type `yes` and hit **Enter**. All is well if you see:
 ``` Bash
 git remote set-url origin git@github.com:krsmith436/your-repo-name.git 
 ```
+
 
 
 
