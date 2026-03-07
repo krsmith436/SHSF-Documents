@@ -3,7 +3,7 @@
 <mark>Never use "sudo" for git commands.</mark>
 
 ### DAILY COMMANDS
-- git pull: Grab the latest changes from GitHub to your Pi.
+- git pull: Download & Merge the latest changes from GitHub to your Pi.
 - git add . : Tell Git to track the changes you just made.
 - git commit -m "Fixed a bug": Save those changes locally with a note.
 - git push: Send those saved changes up to GitHub.
@@ -79,7 +79,95 @@ Remove-Item -Recurse -Force C:\path\to\repository
 ```
 Remove-rf flag (`-r` = recursive, `-f` = force) deletes the directory and all its contents, including the `.git` folder.
 
-### CREATE AND SWITCH TO A NEW BRANCH
+### ESSENTIAL BRANCH COMMANDS
+#### List all local branches:
+```bash
+git branch
+```
+This shows all local branches, with the current branch marked with an asterisk (*).
+
+#### List all branches (local and remote):
+```bash
+git branch -a
+```
+
+#### Create a new branch:
+```bash
+git branch feature/user-auth
+```
+This creates a new branch called `feature/user-auth` but doesn't switch to it.
+
+#### Create and switch to a new branch (shorthand):
+```bash
+git branch -b feature/user-auth
+```
+
+#### Delete a local branch:
+```bash
+git branch -d feature/user-auth
+```
+Use `-D` to force delete if the branch hasn't been merged.
+
+#### Rename a branch:
+```bash
+git branch -m old-branch-name new-branch-name
+```
+
+---
+
+## Branch Tips and Best Practices
+
+| Command | Purpose |
+|---------|---------|
+| `git branch -v` | Show branches with their latest commits |
+| `git branch --merged` | Show branches that have been merged into the current branch |
+| `git branch --no-merged` | Show branches that haven't been merged yet |
+| `git log --graph --oneline --all` | Visualize branch history |
+| `git reflog` | View all branch changes (useful for recovery) |
+
+---
+
+### <mark>WORKFLOW: CREATE BRANCH ON GITHUB AND GET IT TO PI</mark>
+#### Part 1: Create a Branch on GitHub
+1. Go to your repository on github.com
+2. Click the branch dropdown (currently showing your default branch, usually "main")
+3. Type a new branch name
+4. Click "Create branch: [name]"
+
+#### Part 2: Get the Branch on Your Raspberry Pi
+1. **Clone the repository (if you haven't already):**
+   ```bash
+   # SSH (requires SSH key setup)
+   git clone git@github.com:username/repo-name.git
+   
+   # Or HTTPS
+   git clone https://github.com/username/repo-name.git
+   ```
+
+2. **Navigate to the repository:**
+   ```bash
+   cd repo-name
+   ```
+
+3. **Fetch all branches from GitHub:**
+   ```bash
+   git fetch origin
+   ```
+
+4. **Check out your new branch:**
+   ```bash
+   git checkout my-new-branch
+   ```
+
+5. **Verify you're on the correct branch:**
+   ```bash
+   git branch
+   # Should show:
+   # * my-new-branch
+   #   main
+   ```
+
+### <mark>WORKFLOW: CREATE AND SWITCH TO A LOCAL BRANCH (local merge)</mark>
 1. Instead of working on main, create a "feature" branch. Let’s call it ble-fix.
 ``` Bash
 git checkout -b ble-fix
@@ -92,7 +180,7 @@ Now, modify your Python scripts.
 ``` Bash
 # After editing your files...
 git add .
-git commit -m "Testing new Bluetooth connection logic"
+git commit -m "Testing new Bluetooth connection logic" or "Implement new feature"
 ```
 
 3. Switch Back to Main<br>
@@ -118,6 +206,27 @@ git branch -d ble-fix
 
 # Push the updated main branch to GitHub
 git push origin main
+```
+
+### <mark>WORKFLOW: CREATE AND SWITCH TO A LOCAL BRANCH (remote merge)</mark>
+```bash
+# Create a feature branch from main
+git checkout -b feature/new-feature
+
+# Make changes and commit
+git add .
+git commit -m "Implement new feature"
+
+# Push to remote
+git push -u origin feature/new-feature
+
+# Create a pull request on GitHub/GitLab
+# After review and approval, merge on the remote
+
+# Clean up locally
+git checkout main
+git pull origin main # Download & Merge
+git branch -d feature/new-feature
 ```
 
 ### INSTALL GIT
@@ -170,6 +279,7 @@ Type `yes` and hit **Enter**. All is well if you see:
 ``` Bash
 git remote set-url origin git@github.com:krsmith436/your-repo-name.git 
 ```
+
 
 
 
