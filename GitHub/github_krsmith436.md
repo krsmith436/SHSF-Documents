@@ -167,6 +167,18 @@ git branch -m old-branch-name new-branch-name
    #   main
    ```
 
+## <mark>WORKFLOW: CLOSING ISSUES VIA COMMITS</mark>
+GitHub has a feature called "Autolinked references." You can close an issue automatically just by writing a specific message in your Git commit on the Pi.
+
+When you are ready to commit the fix:
+
+```Bash
+git add .
+git commit -m "Fixed the timeout logic. Closes #1"
+git push origin main
+```
+**What happens:** As soon as you push, GitHub sees the keywords **"Closes #1"** (or "Fixes #1"), links the commit to Issue #1, and automatically marks the issue as **Closed**.
+
 ## <mark>WORKFLOW: CREATE AND SWITCH TO A LOCAL BRANCH (local merge)</mark>
 1. Instead of working on main, create a "feature" branch. Let’s call it ble-fix.
 ``` Bash
@@ -278,6 +290,7 @@ Type `yes` and hit **Enter**. All is well if you see:
 ``` Bash
 git remote set-url origin git@github.com:krsmith436/your-repo-name.git 
 ```
+
 
 
 
