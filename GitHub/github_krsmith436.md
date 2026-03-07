@@ -2,14 +2,14 @@
 
 <mark>Never use "sudo" for git commands.</mark>
 
-### DAILY COMMANDS
+## DAILY COMMANDS
 - git pull: Download & Merge the latest changes from GitHub to your Pi.
 - git add . : Tell Git to track the changes you just made.
 - git commit -m "Fixed a bug": Save those changes locally with a note.
 - git push: Send those saved changes up to GitHub.
 - git log --oneline: Clean list of every "save point" you’ve created so far.
 
-### CREATE REPOSITORY
+## CREATE REPOSITORY
 Before you touch the Pi, GitHub needs to know where the code is going.
 1. Log into GitHub and click the + icon in the top right -> New repository.
 2. Give it a name (it doesn't have to match your folder name, but it helps).
@@ -66,7 +66,7 @@ b) change ownership of all files to USER.
 sudo chown -R $USER:$USER .     # Don't forget '.' at the end 
 ```
 
-### REMOVE LOCAL REPOSITORY
+## REMOVE LOCAL REPOSITORY
 This removes only the `.git` folder, leaving your source code intact but removing all git history and repository metadata.
 >On macOS/Linux:
 ``` Bash
@@ -79,7 +79,7 @@ Remove-Item -Recurse -Force C:\path\to\repository
 ```
 Remove-rf flag (`-r` = recursive, `-f` = force) deletes the directory and all its contents, including the `.git` folder.
 
-### ESSENTIAL BRANCH COMMANDS
+## ESSENTIAL BRANCH COMMANDS
 #### List all local branches:
 ```bash
 git branch
@@ -115,7 +115,7 @@ git branch -m old-branch-name new-branch-name
 
 ---
 
-## Branch Tips and Best Practices
+#### Branch Tips and Best Practices
 
 | Command | Purpose |
 |---------|---------|
@@ -127,7 +127,7 @@ git branch -m old-branch-name new-branch-name
 
 ---
 
-### <mark>WORKFLOW: CREATE BRANCH ON GITHUB AND GET IT TO PI</mark>
+## <mark>WORKFLOW: CREATE BRANCH ON GITHUB AND GET IT TO PI</mark>
 #### Part 1: Create a Branch on GitHub
 1. Go to your repository on github.com
 2. Click the branch dropdown (currently showing your default branch, usually "main")
@@ -167,7 +167,7 @@ git branch -m old-branch-name new-branch-name
    #   main
    ```
 
-### <mark>WORKFLOW: CREATE AND SWITCH TO A LOCAL BRANCH (local merge)</mark>
+## <mark>WORKFLOW: CREATE AND SWITCH TO A LOCAL BRANCH (local merge)</mark>
 1. Instead of working on main, create a "feature" branch. Let’s call it ble-fix.
 ``` Bash
 git checkout -b ble-fix
@@ -208,7 +208,7 @@ git branch -d ble-fix
 git push origin main
 ```
 
-### <mark>WORKFLOW: CREATE AND SWITCH TO A LOCAL BRANCH (remote merge)</mark>
+## <mark>WORKFLOW: CREATE AND SWITCH TO A LOCAL BRANCH (remote merge)</mark>
 ```bash
 # Create a feature branch from main
 git checkout -b feature/new-feature
@@ -229,20 +229,20 @@ git pull origin main # Download & Merge
 git branch -d feature/new-feature
 ```
 
-### INSTALL GIT
+## INSTALL GIT
 ``` Bash
 sudo apt update
 sudo apt install git -y
 git --version
 ```
 
-### CONFIG
+## CONFIG
 ``` Bash
 git config --global user.name "krsmith436"
 git config --global user.email "krsmith436@att.net" 
 ```
 
-### SETUP SSH
+## SETUP SSH
 1. Check for existing keys
 ``` Bash
 ls -al ~/.ssh 
@@ -279,6 +279,7 @@ Type `yes` and hit **Enter**. All is well if you see:
 ``` Bash
 git remote set-url origin git@github.com:krsmith436/your-repo-name.git 
 ```
+
 
 
 
